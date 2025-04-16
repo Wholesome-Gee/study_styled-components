@@ -22,3 +22,13 @@
 - JSX에서 `<Box bgColor="red">`
 
 ---
+
+### #2.3
+
+**📗styled-components as를 사용하여 html 태그 교체하기**
+
+- `<Btn as='a' href='/'/>`
+
+**📗styled-components attrs를 사용하여 html 태그 속성 부여하기**
+
+- `` const Input = styled.input.attrs({required:true})`...`  ``
