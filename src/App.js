@@ -63,6 +63,17 @@ const NestingBox = styled(Box)`
   }
 `;
 
+// styled-components nesting 문법2 #2.5
+const Smile = styled.span``;
+const SmileBox = styled(Box)`
+  ${Smile} {
+    font-size: 16px;
+    &:hover {
+      font-size: 32px;
+    }
+  }
+`;
+
 // JSX
 function App() {
   return (
@@ -78,6 +89,9 @@ function App() {
       <NestingBox bgColor="black">
         <span>Hello</span>
       </NestingBox>
+      <SmileBox bgColor="yellow">
+        <Smile as="p">😀</Smile>
+      </SmileBox>
     </Father>
   );
 }

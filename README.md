@@ -48,3 +48,28 @@
 - `` const NestingBox = styled.div`... span{...} &:hover{...}` ``
 
 ---
+
+### #2.5
+
+**📗styled-components nesting 문법2**
+
+- nesting 문법에서 html tag 말고 styled component를 select 할땐 ${컴포넌트명}
+
+  ```js
+  const Smile = styled.span``;
+  const SmileBox = styled.div`
+    width: 100px;
+    height: 100px;
+    background-color: orange;
+    ${Smile} {
+      font-size: 16px;
+      &:hover {
+        font-size: 32px;
+      }
+    }
+  `;
+  ...
+  <SmileBox>
+    <Smile>😀</Smile>
+  </SmileBox>
+  ```
