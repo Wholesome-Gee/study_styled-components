@@ -74,6 +74,15 @@ const SmileBox = styled(Box)`
   }
 `;
 
+// styled-components ThemesProvider로 themes 설정하기 #2.7
+const ThemeBox = styled.div`
+  color: ${(props) => props.theme.textColor};
+  background-color: ${(props) => props.theme.backgroundColor};
+  border: 1px solid black;
+  padding: 10px;
+  margin: 2px;
+`;
+
 // JSX
 function App() {
   return (
@@ -92,6 +101,7 @@ function App() {
       <SmileBox bgColor="yellow">
         <Smile as="p">😀</Smile>
       </SmileBox>
+      <ThemeBox> Theme Provider를 활용하여 darkTheme, lightTheme을 설정할 수 있다. </ThemeBox>
     </Father>
   );
 }

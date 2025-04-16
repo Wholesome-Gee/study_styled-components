@@ -73,3 +73,46 @@
     <Smile>😀</Smile>
   </SmileBox>
   ```
+
+  ### #2.7
+
+  **📗styled-components에서 themeProvider를 활용하여 darkTheme/lightTheme 설정하기**
+
+  - index.js 설정
+
+    ```js
+    import { ThemeProvider } from "styled-components";
+
+    const darkTheme = {
+      textColor: "white",
+      backgroundColor: "black",
+    };
+    const lightTheme = {
+      textColor: "black",
+      backgroundColor: "white",
+    };
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+
+    root.render(
+      <React.StrictMode>
+        <ThemeProvider theme={lightTheme}>
+          <App />
+        </ThemeProvider>
+      </React.StrictMode>
+    );
+    ```
+
+  - Component에서 props.theme.lightTheme / darkTheme 사용하기
+    ```js
+    const ThemeBox = styled.div`
+      width: 300px;
+      height: 100px;
+      color: ${(props) => props.theme.textColor};
+      background-color: ${(props) => props.theme.backgroundColor};
+      border: 1px solid black;
+      padding: 10px;
+      margin: 2px;
+    `;
+    ...
+    <ThemeBox> I have Theme </ThemeBox>
+    ```
