@@ -12,3 +12,13 @@
 **📗 styled-components 기본 작성법**
 
 ---
+
+### #2.2
+
+**📗styled-components props를 사용하기**  
+**📗styled-components extends(확장)**
+
+- `` const Box = styled.div`background-color: ${ (props)=>props.bgColor } ``
+- JSX에서 `<Box bgColor="red">`
+
+---

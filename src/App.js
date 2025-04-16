@@ -1,32 +1,32 @@
 import styled from "styled-components"; // npm i styled-components
 
-// styled-component 기본 선언 및 사용법
+// styled-components 기본 선언 및 사용법 #2.1
 const Father = styled.div`
   display: flex;
 `;
-const BoxOne = styled.div`
-  background-color: teal;
+
+// styled-components props 사용방법 #2.2
+const Box = styled.div`
+  background-color: ${(props) => props.bgColor}; // <Box bgColor='tomato'/>
   width: 100px;
   height: 100px;
 `;
-const BoxTwo = styled.div`
-  background-color: tomato;
-  width: 100px;
-  height: 100px;
-`;
-const Text = styled.span`
-  color: white;
+
+// styled-components extends(확장,상속) 사용방법 #2.2
+const Circle = styled(Box)`
+  border-radius: 50px;
 `;
 
 function App() {
   return (
     <Father>
-      <BoxOne>
-        <Text>Hello</Text>
-      </BoxOne>
-      <BoxTwo />
+      <Box bgColor="teal" />
+      <Circle bgColor="tomato" />
     </Father>
   );
 }
+/* 
+📍 JSX
 
+ */
 export default App;
